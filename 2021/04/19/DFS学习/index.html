@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>DFS学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1、二叉树最大深度123456789101112## 	var maxDepth &#x3D; function(root) &amp;#123;	if(!root) &amp;#123;	    return 0;	&amp;#125; else &amp;#123;	    const left &#x3D; maxDepth(root.left);	    const right &#x3D; maxDepth(root.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DFS学习">
+<meta property="og:url" content="http://example.com/2021/04/19/DFS%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、二叉树最大深度123456789101112## 	var maxDepth &#x3D; function(root) &amp;#123;	if(!root) &amp;#123;	    return 0;	&amp;#125; else &amp;#123;	    const left &#x3D; maxDepth(root.left);	    const right &#x3D; maxDepth(root.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-19T09:34:55.000Z">
+<meta property="article:modified_time" content="2021-04-22T13:37:35.867Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-DFS学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/19/DFS%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2021-04-19T09:34:55.000Z" itemprop="datePublished">2021-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      DFS学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1、二叉树最大深度"><a href="#1、二叉树最大深度" class="headerlink" title="1、二叉树最大深度"></a>1、二叉树最大深度</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line"></span><br><span class="line">	var maxDepth &#x3D; function(root) &#123;</span><br><span class="line">	if(!root) &#123;</span><br><span class="line">	    return 0;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">	    const left &#x3D; maxDepth(root.left);</span><br><span class="line">	    const right &#x3D; maxDepth(root.right);</span><br><span class="line">	    return Math.max(left, right) + 1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2、岛屿数量"><a href="#2、岛屿数量" class="headerlink" title="2、岛屿数量"></a>2、岛屿数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">	 &#x2F;*</span><br><span class="line"></span><br><span class="line">​    广度优先思想:每一步都要判断四个方向四个方向走完了再走下一步，有点像扫雷游戏</span><br><span class="line"></span><br><span class="line">​    深度优先思想:每一步一个方向走到底，走不通了在回到分岔路走另外一个方向走到底</span><br><span class="line"></span><br><span class="line">​    *&#x2F;</span><br><span class="line"></span><br><span class="line">​    const numIslands &#x3D; (grid) &#x3D;&gt; &#123;</span><br><span class="line">​      let count &#x3D; 0</span><br><span class="line">​      for (let i &#x3D; 0; i &lt; grid.length; i++) &#123;</span><br><span class="line">​        for (let j &#x3D; 0; j &lt; grid[0].length; j++) &#123;</span><br><span class="line">​        if (grid[i][j] &#x3D;&#x3D;&#x3D; &#39;1&#39;) &#123;</span><br><span class="line">​          count++</span><br><span class="line">​          turnZero(i, j, grid)</span><br><span class="line">​        &#125;</span><br><span class="line">​        &#125;</span><br><span class="line">​      &#125;</span><br><span class="line">​      return count</span><br><span class="line">​      &#125;</span><br><span class="line">​      function turnZero(i, j, grid) &#123;</span><br><span class="line">​      if (i &lt; 0 || i &gt;&#x3D; grid.length ||</span><br><span class="line">​       j &lt; 0 || j &gt;&#x3D; grid[0].length ||</span><br><span class="line">​       grid[i][j] &#x3D;&#x3D;&#x3D; &#39;0&#39;) return</span><br><span class="line">​      grid[i][j] &#x3D; &#39;0&#39;</span><br><span class="line">​      turnZero(i, j + 1, grid)</span><br><span class="line">​      turnZero(i, j - 1, grid)</span><br><span class="line">​      turnZero(i + 1, j, grid)</span><br><span class="line">​      turnZero(i - 1, j, grid)</span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">​      grid &#x3D; [</span><br><span class="line">​      [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">​      [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">​      [&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],</span><br><span class="line">​      [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;]</span><br><span class="line">​      ]</span><br><span class="line">​      </span><br><span class="line">​    console.log(numIslands(grid))</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、全排列回溯"><a href="#3、全排列回溯" class="headerlink" title="3、全排列回溯"></a>3、全排列回溯</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    &#96;const permute &#x3D; (nums) &#x3D;&gt; &#123;&#96;</span><br><span class="line">​      &#96;const res &#x3D; []&#96;	</span><br><span class="line">​      &#96;const used &#x3D; &#123;&#125;&#96;  &#x2F;&#x2F;用过的存在这里</span><br><span class="line">​      &#96;dfs([])&#96;</span><br><span class="line">​      &#96;function dfs(path)&#123;&#96;</span><br><span class="line">​        &#96;if(path.length&#x3D;&#x3D;&#x3D;nums.length)&#123;&#96; &#x2F;&#x2F;如果一条线的长度等于nums的长度说明一次排列已经完成</span><br><span class="line">​          &#96;res.push([...path])&#96;</span><br><span class="line">​        &#96;&#125;&#96;</span><br><span class="line">​        &#96;for (const num of nums) &#123;&#96;</span><br><span class="line">​          &#96;if(used[num])continue&#96; &#x2F;&#x2F;过滤出已经使用过的排列元素</span><br><span class="line">​          &#96;used[num]&#x3D;true&#96;	</span><br><span class="line">​          &#96;path.push(num)&#96;	</span><br><span class="line">​          &#96;dfs(path)&#96;</span><br><span class="line">​          &#96;path.pop()&#96;</span><br><span class="line">​          &#96;used[num] &#x3D;false&#96;</span><br><span class="line">​        &#96;&#125;&#96;</span><br><span class="line">​      &#96;&#125;&#96;</span><br><span class="line">​      &#96;return res&#96;</span><br><span class="line">​    &#96;&#125;&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、电话号码对应字母"><a href="#4、电话号码对应字母" class="headerlink" title="4、电话号码对应字母"></a>4、电话号码对应字母</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    const letterCombinations &#x3D; (digits) &#x3D;&gt; &#123;</span><br><span class="line"></span><br><span class="line">​      if (digits.length &#x3D;&#x3D; 0) return [];</span><br><span class="line">​      const res &#x3D; [];</span><br><span class="line">​      const map &#x3D; &#123; &#39;2&#39;: &#39;abc&#39;, &#39;3&#39;: &#39;def&#39;, &#39;4&#39;: &#39;ghi&#39;, &#39;5&#39;: &#39;jkl&#39;, &#39;6&#39;: &#39;mno&#39;, &#39;7&#39;: &#39;pqrs&#39;, &#39;8&#39;: &#39;tuv&#39;, &#39;9&#39;: &#39;wxyz&#39; &#125;;</span><br><span class="line">​       function dfs(curStr,i)&#123;      &#x2F;&#x2F;这个dfs设计有能拿到对应字符的表，还能遍历这个表对应的字符</span><br><span class="line">​         if(curStr.length &#x3D;&#x3D;&#x3D; digits.length)&#123;</span><br><span class="line">​           res.push(curStr)</span><br><span class="line">​           return </span><br><span class="line">​         &#125;</span><br><span class="line">​        const letters &#x3D; map[digits[i]] &#x2F;&#x2F;拿到第一个字符对应的表</span><br><span class="line">​        for (const letter of letters) &#123;     &#x2F;&#x2F;遍历这个表</span><br><span class="line">​          dfs(curStr+letter,i+1) </span><br><span class="line">​        &#125;</span><br><span class="line">​       &#125;</span><br><span class="line">​        dfs(&#39;&#39;,0)</span><br><span class="line">​        return res</span><br><span class="line">​      &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/19/DFS%E5%AD%A6%E4%B9%A0/" data-id="cknyb173m0001m0v87xskbvjn" data-title="DFS学习" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/19/%E5%B9%B6%E5%8F%91%E3%80%81%E5%B9%B6%E8%A1%8C%E3%80%81%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E3%80%81%E5%8D%95%E7%BA%BF%E7%A8%8B%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%AE%83%E4%BB%AC%E7%9A%84%E5%85%B3%E7%B3%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          并发、并行、同步、异步 它们的关系
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/18/BFS%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BFS学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/04/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/19/%E5%B9%B6%E5%8F%91%E3%80%81%E5%B9%B6%E8%A1%8C%E3%80%81%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E3%80%81%E5%8D%95%E7%BA%BF%E7%A8%8B%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%AE%83%E4%BB%AC%E7%9A%84%E5%85%B3%E7%B3%BB/">并发、并行、同步、异步 它们的关系</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/19/DFS%E5%AD%A6%E4%B9%A0/">DFS学习</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/18/BFS%E5%AD%A6%E4%B9%A0/">BFS学习</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/17/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/">自我介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
